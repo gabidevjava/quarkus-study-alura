@@ -30,6 +30,14 @@ public class Ordem {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	
+	public LocalDate getData() {
+		return data;
+	}
+
+	public void setData(LocalDate data) {
+		this.data = data;
+	}
 
 	public void setStatus(String status) {
 		this.status = status;
