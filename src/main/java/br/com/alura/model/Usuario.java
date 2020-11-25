@@ -6,8 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import io.quarkus.security.jpa.Password;
+import io.quarkus.security.jpa.Roles;
+import io.quarkus.security.jpa.UserDefinition;
+import io.quarkus.security.jpa.Username;
 
 @Entity
+@UserDefinition
 public class Usuario extends PanacheEntityBase {
 	
 	@Id
@@ -16,8 +21,14 @@ public class Usuario extends PanacheEntityBase {
 	
 	private String nome;
 	private String cpf;
+	
+	@Username
 	private String username;
+	
+	@Password
 	private String password;
+	
+	@Roles
 	private String role;
 	
 	public void setCpf(String cpf) {
@@ -28,11 +39,23 @@ public class Usuario extends PanacheEntityBase {
 		this.username = username;
 	}
 	
+	public String getUsername() {
+		return username;
+	}
+	
 	public void setPassword(String password) {
 		this.password = password;
 	}
 	
+	public String getPassword() {
+		return password;
+	}
+	
 	public void setRole(String role) {
 		this.role = role;
+	}
+	
+	public String getRole() {
+		return role;
 	}
 }
