@@ -8,7 +8,9 @@ import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.SecurityContext;
 
 import br.com.alura.model.Ordem;
 import br.com.alura.repository.OrdemRepository;
@@ -23,7 +25,7 @@ public class OrdemResource {
 	@Transactional
 	@RolesAllowed("user")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void inserir(Ordem ordem) {
+	public void inserir(@Context SecurityContext context, Ordem ordem) {
 		ordem.setData(LocalDate.now());
 		ordem.setStatus("ENVIADO");
 		
