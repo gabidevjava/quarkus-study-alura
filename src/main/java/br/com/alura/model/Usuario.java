@@ -62,6 +62,10 @@ public class Usuario extends PanacheEntityBase {
 		return role;
 	}
 	
+	public String getNome() {
+		return nome;
+	}
+	
 	public static void adicionar(Usuario usuario) {
 		usuario.password = BcryptUtil.bcryptHash(usuario.password);
 		usuario.role = validarUsername(usuario.username);
