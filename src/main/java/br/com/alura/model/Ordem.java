@@ -50,4 +50,20 @@ public class Ordem {
 	public Long getUserId() {
 		return userId;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public Double getPreco() {
+		return preco;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public String getStatus() {
+		return status;
+	}
 }
