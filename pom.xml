@@ -58,6 +58,11 @@
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-security-jpa</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-panache-mock</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>io.rest-assured</groupId>
